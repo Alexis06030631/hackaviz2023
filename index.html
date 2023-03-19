@@ -1,0 +1,106 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <!-- Constantes des données -->
+    <script>
+        window.data = {}
+        let info
+        let map
+        let geojson
+    </script>
+    <script type="text/javascript" src="./data_use/stations_by_deps.js"></script>
+    <script type="text/javascript" src="./data_use/closed_stations.js"></script>
+    <script type="text/javascript" src="./data_use/moyenne_prix_city.js"></script>
+    <script type="text/javascript" src="./data_use/prix_apr_augm.js"></script>
+    <script type="text/javascript" src="./data_use/less_cher.js"></script>
+    <script type="text/javascript" src="./data_use/more_cher.js"></script>
+
+    <!-- Librairies -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css" />
+    <link type="text/css" rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="./assets/style.css">
+    <title>Dataviz - L'essence en France</title>
+</head>
+<body>
+
+<div class="container-fluid">
+    <div class="row">
+
+        <div class="col-md-4 main">
+
+            <h1 class="page-header">Dataviz - l'histoire de l'essence en France</h1>
+
+            <section data-place="intro">
+                <p>Voici une carte interactive qui vous permettra de découvrir l'évolution de l'essence en France et les différents évènements qui ont frappé les stations-service.</p>
+                <p>Vous pouvez actuellement voir la répartition des différentes stations-service en France par département. Pour le moment, nous pouvons remarquer que le département des Bouches-du-Rhône contient le plus de stations-service. Ceci est certainement dû à son emplacement géographique situé à proximité de la Méditerranée et des ports de Marseille et Toulon.</p>
+            </section>
+
+            <section data-place="fermetures">
+                <h2>Crise de 2008</h2>
+                <p>En 2008, la crise économique a eu de fortes répercutions sur les stations-service en France. En effet, les prix de l'essence ont augmenté et les consommateurs ont réduit leurs dépenses.</p>
+                <p>De plus, les stations-service ont été impactées par la concurrence des supermarchés qui ont commencé à vendre de l'essence à un prix plus bas que les stations-service.</p>
+                <p>Vous pouvez voir ci-contre que les stations-service qui ont fermé en France entre 2008 et 2012 sont pricipalement situées dans la partie est du pays. Et une grande partie de ces stations sont situées à Paris.</p>
+            </section>
+
+            <section  data-place="prix_avant_augm">
+                <h2>L'inflation</h2>
+                <p>Depuis le début du conflit Russe-Ukrainien, les prix de l'essence n'ont cessé d'augmenter. La carte suivante vous montre la moyenne des prix de le SP98 en France et par departement en 2020.</p>
+            </section>
+
+            <section  data-place="prix_apr_augm">
+                <h2>Mars 2022</h2>
+                <p>Cette carte nous montre la différence moyenne des prix de l'essence en France en mars 2022. Nous pouvons voir que les prix ont augmenté de façon équivalente dans la plupart des départements.</p>
+                <p>Cependant, nous pouvons remarquer que les prix ont fortement variés dans le département des Hautes-Alpes alors que les prix moyens avant cette date étaient dans la moyenne basse.</p>
+            </section>
+
+            <section data-place="more_cher">
+                <h2>Les 100 stations les plus chères</h2>
+                <p>Vous êtes fortuné et vous voulez dépenser votre argent dans les stations-service les plus chères de France ?</p>
+                <p>La carte suivante vous montre les 100 stations-service les plus chères de France. Une grande partie de ces stations sont situées dans le centre de Paris.</p>
+                <p>À contrario, si vous êtes un peu plus modeste, vous pouvez scroller vers le bas pour voir les 100 stations-service les moins chères de France.</p>
+            </section>
+
+            <section data-place="less_cher">
+                <h2>Les 100 stations les moins chères</h2>
+                <p>Retrouvez ci-dessous les 100 stations-service les moins chères de France.</p>
+            </section>
+
+            <!-- Footer -->
+            <footer style="margin-left: -10%">
+                <div class="container" style="margin-top: 5%">
+                    <div class="row">
+                        <div class="col-lg-5">
+                            <p>Les données proviennent de data.gouv.fr et de TDV dans le cadre du projet Dataviz 2023.</p>
+                            <p>La carte est réalisée avec <a href="http://leafletjs.com/">Leaflet</a> et <a href="http://www.openstreetmap.org/">OpenStreetMap</a>.</p>
+                            <p>Réalisé par <a href="https://instagram.com/leko_system">Alexis D.</a></p>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+
+        </div>
+
+        <div id="map" class="col-sm-6 col-md-8 sidebar">
+
+        </div>
+
+    </div>
+</div>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js"></script>
+<script src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js"></script>
+<script src="https://code.jquery.com/jquery-1.11.1.min.js" type="text/javascript"></script>
+<script src="./assets/scripts/utils.js"></script>
+<script src="./assets/scripts/change_steps.js"></script>
+<script type="text/javascript" src="./assets/storymap.js"></script>
+<script type="text/javascript">
+    (function () {
+        'use strict';
+
+        $('.main').storymap();
+    }());
+</script>
+</body>
+</html>
