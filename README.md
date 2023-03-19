@@ -6,7 +6,7 @@
 
 ----
 
-Retrouver mon travail : [ICI](https://alexis06030631.github.io/hackaviz2023/)
+Retrouvez mon travail : [ICI](https://alexis06030631.github.io/hackaviz2023/)
 
 ## Comment j'en suis arrivé là ?
 
