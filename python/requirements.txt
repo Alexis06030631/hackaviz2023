@@ -1,0 +1,4 @@
+setuptools~=67.6.0
+mysql~=0.0.3
+mysql-connector-python~=8.0.32
+folium~=0.14.0
